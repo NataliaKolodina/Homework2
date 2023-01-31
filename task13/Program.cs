@@ -6,18 +6,20 @@
 
 Console.Clear();
 
-int num = new Random().Next();
-int count = 10;
-int result = (num % count * 10 - num % count) / count;
+Console.Write("Введите число: ");
+int num = int.Parse(Console.ReadLine());
+Console.Write(num);
+
 if (num > 99)
 {
-    while (num < count * 100)
+    while (num > 1000)
     {
-        Console.WriteLine($"{num} -> {result}");
+        num = num / 10;
     }
-    count = count * 10;
+    int result = num % 10;
+    Console.WriteLine($" -> {result}");
 }
 else
 {
-    Console.WriteLine($"{num} -> третьей цифры нет");
+    Console.WriteLine($" -> третьей цифры нет");
 }
